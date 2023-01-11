@@ -1,0 +1,17 @@
+services:
+  firebase:
+    image: andreysenov/firebase-tools
+    ports:
+      - 9199:9199
+      - 9099:9099
+      - 9005:9005
+      - 9000:9000
+      - 8085:8085
+      - 8080:8080
+      - 5001:5001
+      - 5000:5000
+      - 4000:4000
+    volumes:
+      - ./:/home/node
+    tty: true
+    command: firebase emulators:start
