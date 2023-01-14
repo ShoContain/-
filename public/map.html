@@ -22,7 +22,12 @@
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 
-  var marker = L.marker([35.1458109, 136.7989185]).addTo(map);
+  const marker = L.marker([35.1458109, 136.7989185]).addTo(map);
+
+  const circle = L.circle([35.1458109, 136.7989185],{
+    color:'red',
+    radius: 200
+  }).addTo(map)
   </script>
 </body>
 </html>

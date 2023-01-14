@@ -1,6 +1,10 @@
 services:
   firebase:
-    image: andreysenov/firebase-tools
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./:/opt/firebase
     ports:
       - 9199:9199
       - 9099:9099
@@ -11,7 +15,6 @@ services:
       - 5001:5001
       - 5000:5000
       - 4000:4000
-    volumes:
-      - ./:/home/node
+    working_dir: /opt/firebase
     tty: true
     command: firebase emulators:start
